@@ -1,4 +1,3 @@
-const { typeUsername } = require("./LoginPage");
 
 class JoinPageField {
 
@@ -52,6 +51,7 @@ class JoinPage {
         postcodeInput: new JoinPageField("#postcode", "#postcode-error-text"),
         stateDropdown: () => cy.get('#stateCode'),
 
+        formHeader: () => cy.get('h1').contains('Create Account'),
         joinBtn: () => cy.get('button').contains('JOIN'),
         createAccountBtn: () => cy.get("#create-account"),
         addressManualBtn: () => cy.get('button').contains("Enter Address Manually"),
@@ -135,6 +135,10 @@ class JoinPage {
 
     verifyNotifStrip(errorMsg) {
         this.elements.notifStrip().contains(errorMsg)
+    }
+
+    clickHeader() {
+        this.elements.formHeader().click();
     }
 
     clickJoinBtn() {

@@ -27,4 +27,4 @@ npm run cypress:runner
 ```
 
 ## Notes
-Default Cypress timeout has been extended to 15000 to allow for overhead on Myer's website.
+Default Cypress timeout has been extended to 20000 to allow for overhead on Myer's website (mainly the form submission).

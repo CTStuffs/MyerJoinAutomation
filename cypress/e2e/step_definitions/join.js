@@ -1,7 +1,6 @@
 import {
   Given,
   When,
-  And,
   Then,
 } from "@badeball/cypress-cucumber-preprocessor";
 const joinPage = require("../../pages/JoinPage");
@@ -99,6 +98,7 @@ When("user inputs details", (table) => {
     user.mobile = row.mobile;
     // address is verified seperately for now and thus is not set here
   });
+  joinPage.clickHeader();
 });
 
 When("user inputs custom address", (table) => {
@@ -118,7 +118,7 @@ When("user inputs custom address", (table) => {
 
 
 Then("user verifies {string} error message", (type) => {
-  joinPage.clickCreateAccount(); // reset error messages
+  joinPage.clickHeader();
   switch (type) {
     case "email":
       joinPage.verifyEmailErrorMsg("Please enter a valid email address")

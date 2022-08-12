@@ -31,6 +31,6 @@ module.exports = defineConfig({
     specPattern: "cypress/e2e/features/*.feature",
     baseUrl: "https://www.myer.com.au/join",
     chromeWebSecurity: false,
-    defaultCommandTimeout: 15000
+    defaultCommandTimeout: 20000
   },
 });
